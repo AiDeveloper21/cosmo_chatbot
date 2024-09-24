@@ -335,14 +335,14 @@ def train_lstm_model(new_dataset_path, weights_path, tokenizer_path='tokenizer.p
             model.load_weights(weights_path)
             logger.info("LSTM model weights loaded.")
             if retrain:
-                model.fit(input_padded, response_labels, epochs=5, batch_size=32, validation_split=0.2)
+                model.fit(input_padded, response_labels, epochs=100, batch_size=32, validation_split=0.2)
                 model.save_weights(weights_path)
                 logger.info("LSTM model retrained and weights updated.")
         except Exception as e:
             logger.error(f"Failed to load weights: {e}")
             sys.exit(1)
     else:
-        model.fit(input_padded, response_labels, epochs=10, batch_size=32, validation_split=0.2)
+        model.fit(input_padded, response_labels, epochs=100, batch_size=32, validation_split=0.2)
         model.save_weights(weights_path)
         logger.info("LSTM model trained and weights saved.")
 
