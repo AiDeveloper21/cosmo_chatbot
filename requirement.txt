@@ -1,0 +1,8 @@
+numpy
+pandas
+tensorflow>=2.4.0
+torch>=1.7.0
+torchvision
+transformers
+pillow
+git+https://github.com/openai/CLIP.git
